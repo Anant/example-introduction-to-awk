@@ -125,15 +125,13 @@ awk -f script.awk lyrics.txt > substituted.txt
 cat substituted.txt 
 ```
 
-## **5. Combine `awk` and `sed`**
-
-### **5.1 - Do the same thing as `5.1`** 
+### **5.3 - Do the same thing as `5.1` with `awk` + `sed`** 
 
 ```bash
 awk '{print NR"." " " $0}' lyrics.txt | sed 's/Thundercats/Lightningcats/' > sed.txt
 ```
 
-### **5.2 - Confirm with `cat`**
+### **5.4 - Confirm with `cat`**
 
 ```bash
 cat sed.txt 
