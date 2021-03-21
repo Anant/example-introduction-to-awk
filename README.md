@@ -181,7 +181,7 @@ grep "Missing Summary" stopgap.csv
 
 ### **6.3 - But wait, that's not all. Say the person who gave us the initial CSV also wants us to do some additional data transformation. The inital `spacecraft_journey_catalog.csv` file has 4 columns: summary, journey_id, end, and start. The person is also asking if we can give them a new CSV with the corrupted rows containing "Missing Summary" for field one, but also they would like us to calculate the duration in days instead of having fields for end time and start time**
 
-**6.3.1 - For this additional request, we will be utitlizing `sed` as well to make it even easier for us. If you are not familiar with `sed`, check out this [repository](https://github.com/Anant/example-introduction-to-sed). We will talk through the steps and then do the whole command in 1 pipe at the end. 
+**6.3.1 - For this additional request, we will be utitlizing `sed` as well to make it even easier for us. If you are not familiar with `sed`, check out this [repository](https://github.com/Anant/example-introduction-to-sed). We will talk through the steps and then do the whole command in 1 pipe at the end.** 
 
 **6.3.2 - To calculate the time in seconds using the `mktime` function, we will need to do some data cleaning to make our datetime format fit the format required for `mktime`. If we analyze the CSV they gave us, we realize that all the times end in `.000+0000`, which is exactly what we need to clean to utilize `mktime`. We will utilize `sed` to do a global substitution to change (for example) 1981-05-22 13:58:00.000+0000 and 1981-05-14 17:17:00.000+0000 to 1981-05-22 13:58:00 and 1981-05-14 17:17:00**
 
